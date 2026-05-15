@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔍 Log an Inspection"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/honey_dark"
+            android:paddingBottom="20dp"/>
+
+        <!-- Hive Name input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hive Name (e.g., Hive-A1)"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHiveName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Queen Seen checkbox -->
+        <CheckBox
+            android:id="@+id/cbQueenSeen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Queen seen? 👑"
+            android:textSize="16sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Pests Found checkbox -->
+        <CheckBox
+            android:id="@+id/cbPestsFound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pests found? 🐛"
+            android:textSize="16sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Activity Level -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activity Level:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgActivityLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="High 🟢"
+                android:textColor="@color/text_dark"/>
+
+            <RadioButton
+                android:id="@+id/rbMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium 🟡"
+                android:textColor="@color/text_dark"/>
+
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Low 🔴"
+                android:textColor="@color/text_dark"/>
+        </RadioGroup>
+
+        <!-- Honey Flow -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Honey Flow:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgHoneyFlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbFlowGood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Good 🍯"
+                android:textColor="@color/text_dark"/>
+
+            <RadioButton
+                android:id="@+id/rbFlowAverage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Average"
+                android:textColor="@color/text_dark"/>
+
+            <RadioButton
+                android:id="@+id/rbFlowPoor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Poor ⚠️"
+                android:textColor="@color/text_dark"/>
+        </RadioGroup>
+
+        <!-- Notes -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observations / Notes"
+            android:layout_marginBottom="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="3"
+                android:gravity="top"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- AI Advice Box (shown after save) -->
+        <LinearLayout
+            android:id="@+id/aiAdviceBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF9C4"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🤖 AI Beekeeper Advice"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/honey_dark"
+                android:paddingBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvAiAdvice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="@color/text_dark"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveInspection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save &amp; Get AI Advice"
+            android:backgroundTint="@color/honey_accent"
+            android:textColor="@color/white"
+            android:padding="14dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Past Inspections List -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Past Inspections"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:id="@+id/inspectionListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flora Calendar"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/success_green"
+            android:paddingBottom="6dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flowers blooming near you - a guide for your bees"
+            android:textSize="14sp"
+            android:textColor="@color/text_gray"
+            android:paddingBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnAskAiFlora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ask AI: What is blooming this month?"
+            android:backgroundTint="@color/success_green"
+            android:textColor="@color/white"
+            android:padding="14dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/floraAiBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8F5E9"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvFloraAiResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="@color/text_dark"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="India - Seasonal Bloom Guide"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:paddingBottom="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp"
+            android:text="January - February:\nMustard (Sarson) - excellent nectar source\nSunflower fields\nCoriander flowers\nEucalyptus"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp"
+            android:text="March - May (Peak Season!):\nLitchi blossoms - premium honey\nJamun (Java plum) flowers\nMango blossoms\nNeem flowers\nAcacia / Siris tree"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp"
+            android:text="June - August (Monsoon):\nTulsi (Holy Basil) flowers\nSoybean blossoms\nCotton flowers\nWild herbs\nReduced activity - monitor hives closely"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp"
+            android:text="September - December:\nSunflower second crop\nJamun late season\nBorage flowers\nPhacelia\nWinter mustard beginning"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"/>
+
+    </LinearLayout>
+</ScrollView>
